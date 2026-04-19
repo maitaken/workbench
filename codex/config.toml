@@ -1,0 +1,7 @@
+notify = ["bash", "-lc", "afplay /System/Library/Sounds/Ping.aiff"]
+sandbox_mode = "workspace-write"
+approval_policy = "on-request"
+
+[features]
+web_search_request = true
+
