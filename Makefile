@@ -6,6 +6,10 @@ symlink:
 	mkdir -p $(XDG_CONFIG_HOME)/ghostty
 	ln -sfn $(PWD)/dotfiles/config.ghostty $(XDG_CONFIG_HOME)/ghostty/config.ghostty
 
+	mkdir -p ~/.codex
+	ln -sfn $(PWD)/codex/config.toml ~/.codex/config.toml
+	ln -sfn $(PWD)/codex/AGENT.md ~/.codex/AGENT.md
+
 	ln -sfn $(PWD)/dotfiles/.zshrc ~/.zshrc
 	ln -sfn $(PWD)/dotfiles/.vimrc ~/.vimrc
 	ln -sfn $(PWD)/dotfiles/.tmux.conf ~/.tmux.conf
