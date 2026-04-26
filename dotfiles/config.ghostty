@@ -1,0 +1,40 @@
+# テーマ
+theme = Catppuccin Mocha
+
+# リガチャ対応フォント
+font-family = Fira Code"
+font-size = 14
+adjust-cell-height = 5%
+
+# Background
+background-opacity = 0.90
+background-blur = 20
+
+# タイトルは不要
+title = " "
+
+# コマンド実行後にwindowを残す
+wait-after-command = true
+
+# Window
+window-padding-x = 5
+window-padding-y = 5
+window-padding-balance = true
+
+# 入力中はマウスカーソルを隠す
+mouse-hide-while-typing = true
+
+scrollback-limit = 100000
+
+# カーソル選択でコピー
+copy-on-select = true
+
+# Quick Terminal
+quick-terminal-screen=mouse
+quick-terminal-size = "100%,100%"
+quick-terminal-position = "center"
+quick-terminal-space-behavior = "remain"
+quick-terminal-autohide = false
+
+# グローバルキーバインド
+keybind = "global:cmd+shift+t=toggle_quick_terminal"
