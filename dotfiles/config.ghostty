@@ -37,4 +37,4 @@ quick-terminal-space-behavior = "remain"
 quick-terminal-autohide = false
 
 # グローバルキーバインド
-keybind = "global:cmd+shift+t=toggle_quick_terminal"
+keybind = "global:ctrl+alt+a=toggle_quick_terminal"
