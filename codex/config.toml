@@ -5,3 +5,7 @@ approval_policy = "on-request"
 [features]
 web_search_request = true
 
+[mcp_servers.gopls]
+command = "gopls"
+args = ["mcp"]
+env = {}
