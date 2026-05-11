@@ -9,3 +9,31 @@ web_search_request = true
 command = "gopls"
 args = ["mcp"]
 env = {}
+
+[marketplaces.openai-bundled]
+last_updated = "2026-05-07T12:54:08Z"
+source_type = "local"
+source = "/Users/maitake/.codex/.tmp/bundled-marketplaces/openai-bundled"
+
+[marketplaces.openai-primary-runtime]
+last_updated = "2026-05-07T12:54:27Z"
+source_type = "local"
+source = "/Users/maitake/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime"
+
+[plugins."browser-use@openai-bundled"]
+enabled = true
+
+[plugins."documents@openai-primary-runtime"]
+enabled = true
+
+[plugins."spreadsheets@openai-primary-runtime"]
+enabled = true
+
+[plugins."presentations@openai-primary-runtime"]
+enabled = true
+
+[projects."/Users/maitake/ghq/github.com/maitaken/workbench"]
+trust_level = "trusted"
+
+[tui.model_availability_nux]
+"gpt-5.5" = 1
