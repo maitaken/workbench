@@ -34,6 +34,10 @@ if type nodebrew > /dev/null 2>&1; then
   export PATH=$PATH:$HOME/.nodebrew/current/bin
 fi
 
+if [ -d "$HOME/.local/bin" ]; then
+  export PATH="$HOME/.local/bin:$PATH"
+fi
+
 # tmux の session に attach する
 function select-tmux-session() {
   selected=$(tmux list-session | cut -d : -f 1 | fzf)

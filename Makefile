@@ -14,6 +14,11 @@ symlink:
 	ln -sfn $(PWD)/dotfiles/.vimrc ~/.vimrc
 	ln -sfn $(PWD)/dotfiles/.tmux.conf ~/.tmux.conf
 
+.PHONY: setup_bin
+setup_bin:
+	mkdir -p ~/.local/bin
+	ln -sfn $(PWD)/bin/add_worktree.sh ~/.local/bin/add_worktree
+
 .PHONY: setup_tmux
 setup_tmux:
 # https://github.com/catppuccin/tmux
