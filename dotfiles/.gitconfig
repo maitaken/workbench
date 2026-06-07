@@ -1,3 +1,5 @@
 # Copy to $HOME/.gitconfig
 [alias]
 	wa = !add_worktree
+    wr = !rm_worktree
+

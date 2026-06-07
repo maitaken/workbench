@@ -18,6 +18,7 @@ symlink:
 setup_bin:
 	mkdir -p ~/.local/bin
 	ln -sfn $(PWD)/bin/add_worktree.sh ~/.local/bin/add_worktree
+	ln -sfn $(PWD)/bin/rm_worktree.sh ~/.local/bin/rm_worktree
 
 .PHONY: setup_tmux
 setup_tmux:
