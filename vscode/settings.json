@@ -1,0 +1,220 @@
+{
+    // data send 
+    "telemetry.telemetryLevel": "off",
+    // window
+    "window.nativeTabs": true,
+    // workbench
+    "workbench.editor.enablePreview": false,
+    "workbench.editor.focusRecentEditorAfterClose": false,
+    "workbench.editor.wrapTabs": true,
+    "workbench.settings.editor": "json",
+    // editor
+    "editor.guides.bracketPairs": "active",
+    "editor.copyWithSyntaxHighlighting": false,
+    "editor.stickyScroll.enabled": true,
+    "editor.formatOnPaste": false,
+    "editor.formatOnSave": true,
+    "editor.formatOnType": false,
+    "editor.cursorBlinking": "expand",
+    "[jsonc]": {
+        "editor.formatOnSave": false,
+    },
+    "[json]": {
+        "editor.formatOnSave": false,
+    },
+    // スニペットの表示位置
+    "editor.snippetSuggestions": "top",
+    // files
+    "files.insertFinalNewline": true,
+    "files.autoSave": "afterDelay",
+    // diff editor
+    "diffEditor.ignoreTrimWhitespace": false,
+    // extension config
+    // vim
+    // vim easymotion
+    "vim.easymotion": false,
+    "vim.easymotionMarkerForegroundColorOneChar": "rgba(-1,240,170,0.9)",
+    "vim.easymotionMarkerForegroundColorTwoCharSecond": "rgba(-1,240,170,0.9)",
+    // vim leader
+    "vim.leader": "<space>",
+    // vim search
+    "vim.incsearch": true,
+    // vim other config
+    "vim.foldfix": true,
+    "vim.visualstar": true,
+    "vim.sneak": true,
+    // vim clipboard
+    "vim.useSystemClipboard": true,
+    // vim nnoremap
+    "vim.normalModeKeyBindings": [
+        {
+            "before": [
+                "g",
+                "d"
+            ],
+            "commands": [
+                "editor.action.revealDefinition"
+            ]
+        },
+        {
+            "before": [
+                "g",
+                "s"
+            ],
+            "commands": [
+                "workbench.action.gotoSymbol"
+            ]
+        },
+        {
+            "before": [
+                "g",
+                "S"
+            ],
+            "commands": [
+                "workbench.action.showAllSymbols"
+            ]
+        },
+        {
+            "before": [
+                "g",
+                "r"
+            ],
+            "commands": [
+                "editor.action.goToReferences"
+            ]
+        },
+        {
+            "before": [
+                "g",
+                "i"
+            ],
+            "commands": [
+                "editor.action.goToImplementation"
+            ]
+        },
+        {
+            "before": [
+                "g",
+                "t"
+            ],
+            "commands": [
+                "editor.action.goToTypeDefinition"
+            ]
+        },
+        {
+            "before": [
+                "<Leader>",
+                "r",
+                "n"
+            ],
+            "commands": [
+                "editor.action.rename"
+            ]
+        },
+        {
+            "before": [
+                "K"
+            ],
+            "commands": [
+                "editor.action.showHover"
+            ]
+        },
+        {
+            "before": [
+                "g",
+                "e"
+            ],
+            "commands": [
+                "editor.action.marker.next"
+            ]
+        },
+        {
+            "before": [
+                "g",
+                "E"
+            ],
+            "commands": [
+                "editor.action.marker.previous"
+            ]
+        },
+        {
+            "before": [
+                "leader",
+                "f"
+            ],
+            "commands": [
+                "editor.toggleFold"
+            ]
+        },
+        {
+            "before": [
+                "f"
+            ],
+            "after": [
+                "leader",
+                "leader",
+                "leader",
+                "b",
+                "d",
+                "w"
+            ]
+        },
+        {
+            "before": [
+                "leader",
+                "y"
+            ],
+            "after": [
+                "\"",
+                "*",
+                "y"
+            ]
+        },
+    ],
+    // vim inoremap
+    "vim.insertModeKeyBindings": [
+        {
+            "before": [
+                "<C-j>"
+            ],
+            "after": [
+                "<Esc>"
+            ]
+        },
+        {
+            "before": [
+                "<C-i>"
+            ],
+            "commands": [
+                "editor.action.triggerSuggest"
+            ]
+        },
+    ],
+    // vim vnoremap
+    "vim.visualModeKeyBindings": [
+        {
+            "before": [
+                "leader",
+                "/"
+            ],
+            "after": [
+                "escape",
+                "/",
+                "\\",
+                "%",
+                "V"
+            ]
+        },
+        {
+            "before": [
+                "leader",
+                "y"
+            ],
+            "after": [
+                "\"",
+                "*",
+                "y"
+            ]
+        }
+    ]
+}

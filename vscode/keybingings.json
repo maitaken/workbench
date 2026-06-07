@@ -1,0 +1,20 @@
+// 既定値を上書きするには、このファイル内にキー バインドを挿入します
+[
+    {
+        "key": "cmd+[",
+        "command": "workbench.action.navigateBack",
+    },
+    {
+        "key": "cmd+h",
+        "command": "workbench.action.navigateBack",
+    },
+    {
+        "key": "cmd+]",
+        "command": "workbench.action.navigateForward",
+    }
+    {
+        "key": "cmd+l",
+        "command": "workbench.action.navigateForward",
+    }
+]
+    
