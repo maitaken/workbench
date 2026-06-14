@@ -1,5 +1,9 @@
 #!/bin/sh
 
+# メイン以外のGit worktreeをfzfに一覧表示し、選択したworktreeを削除する。
+# Tabキーで複数選択でき、選択を確定すると各git worktree removeコマンドを
+# 表示してから順番に実行する。未コミット変更があるworktreeは強制削除しない。
+
 set -eu
 
 # エラーメッセージを標準エラー出力へ表示して終了する。
@@ -47,6 +51,7 @@ rm_worktrees() {
 
     printf '%s\n' "$selected_worktrees" |
         while IFS= read -r worktree; do
+            echo "git worktree remove \"$worktree\""
             git worktree remove "$worktree"
         done
 }

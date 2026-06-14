@@ -1,5 +1,10 @@
 #!/bin/sh
 
+# 指定したブランチのGit worktreeを、元リポジトリと同じ階層に作成する。
+# ローカルまたはoriginにブランチがあればそれを使用し、なければ新規ブランチを作成する。
+# 新規作成時の基点は第二引数で指定し、省略時はmaster、次にmainを使用する。
+# 実行するgit worktree addコマンドを表示してからworktreeを作成する。
+
 set -eu
 
 # エラーメッセージを標準エラー出力へ表示して終了する。
@@ -75,24 +80,21 @@ path_branch_name() {
     printf '%s\n' "$1" | tr '/' '_'
 }
 
-# 新規ブランチのworktreeを元リポジトリと同じ階層へ作成する。
-# 第一引数に新規ブランチ名、第二引数に作成元ブランチ名を指定する。
+# 指定ブランチのworktreeを元リポジトリと同じ階層へ作成する。
+# 第一引数のブランチが既存ならそのブランチを使用する。
+# 存在しない場合は第二引数のブランチを作成元として新規作成する。
 # 入力例: add_worktree "feature/login" "develop"
 # 作成例: .../workbench_feature_login（ブランチ名はfeature/login）
-# 第二引数を省略した場合はmaster、次にmainを作成元として使用する。
+# 新規作成時に第二引数を省略した場合はmaster、次にmainを作成元として使用する。
 add_worktree() {
     [ "$#" -ge 1 ] && [ "$#" -le 2 ] ||
-        die "usage: add_worktree <new-branch> [base-branch]"
+        die "usage: add_worktree <branch> [base-branch]"
 
     branch_name=$1
     base_branch=${2:-}
 
     git check-ref-format --branch "$branch_name" >/dev/null 2>&1 ||
         die "invalid branch name: $branch_name"
-    if git show-ref --verify --quiet "refs/heads/$branch_name" ||
-        git show-ref --verify --quiet "refs/remotes/origin/$branch_name"; then
-        die "branch already exists: $branch_name"
-    fi
 
     repository_name=$(repo_name)
     repository_worktree=$(origin_worktree "$repository_name")
@@ -101,6 +103,18 @@ add_worktree() {
 
     destination="$(dirname "$repository_worktree")/${repository_name}_$(path_branch_name "$branch_name")"
     [ ! -e "$destination" ] || die "destination already exists: $destination"
+
+    if git show-ref --verify --quiet "refs/heads/$branch_name"; then
+        echo "git worktree add \"$destination\" \"$branch_name\""
+        git worktree add "$destination" "$branch_name"
+        return
+    fi
+
+    if git show-ref --verify --quiet "refs/remotes/origin/$branch_name"; then
+        echo "git worktree add --track -b \"$branch_name\" \"$destination\" \"origin/$branch_name\""
+        git worktree add --track -b "$branch_name" "$destination" "origin/$branch_name"
+        return
+    fi
 
     if [ -z "$base_branch" ]; then
         base_branch=$(default_branch)
@@ -112,6 +126,7 @@ add_worktree() {
         die "base branch does not exist: $base_branch"
     fi
 
+    echo "git worktree add -b \"$branch_name\" \"$destination\" \"$base_branch\""
     git worktree add -b "$branch_name" "$destination" "$base_branch"
 }
 
