@@ -5,16 +5,18 @@
         "command": "workbench.action.navigateBack",
     },
     {
-        "key": "cmd+h",
-        "command": "workbench.action.navigateBack",
-    },
-    {
         "key": "cmd+]",
         "command": "workbench.action.navigateForward",
-    }
+    },
     {
-        "key": "cmd+l",
-        "command": "workbench.action.navigateForward",
-    }
+        "key": "alt+tab",
+        "command": "editor.action.inlineSuggest.commit",
+        "when": "inInlineEditsPreviewEditor"
+    },
+    {
+        "key": "alt+tab",
+        "command": "editor.action.inlineSuggest.commit",
+        "when": "inlineEditIsVisible && tabShouldAcceptInlineEdit && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible || inlineEditIsVisible && inlineSuggestionVisible && tabShouldAcceptInlineEdit && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible || inlineSuggestionHasIndentationLessThanTabSize && inlineSuggestionVisible && !editor.hasSelection && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible || inlineEditIsVisible && inlineSuggestionHasIndentationLessThanTabSize && inlineSuggestionVisible && !editor.hasSelection && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible"
+    },
 ]
     
