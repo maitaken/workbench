@@ -113,6 +113,15 @@
         },
         {
             "before": [
+                "<Leader>",
+                "t"
+            ],
+            "commands": [
+                "workbench.action.tasks.runTask"
+            ]
+        },
+        {
+            "before": [
                 "K"
             ],
             "commands": [
